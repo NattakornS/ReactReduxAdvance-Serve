@@ -14,8 +14,9 @@ mongoose.connect('mongodb://127.0.0.1:27017/auth').then(function(res){
 });
 console.log("connect");
 //App setup
-
+//morgan log request
 app.use(morgan('combined'));
+//parse any body type to javascript obj
 app.use(bodyParser.json({type: '*/*'}));
 
 router(app);
